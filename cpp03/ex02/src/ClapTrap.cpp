@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:26:25 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/05 15:06:23 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:07:31 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ ClapTrap::ClapTrap(const ClapTrap& other) {
     _hitPoints = other._hitPoints;
     _energyPoints = other._energyPoints;
     _attackDamage = other._attackDamage;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+	if (this != &other) {
+		_name = other._name + "_assigned";
+		_hitPoints = other._hitPoints;
+		_energyPoints = other._energyPoints;
+		_attackDamage = other._attackDamage;
+	}
+	std::cout << "ClapTrap named " << _name << " has been assigned!" << std::endl;
+	return *this;
 }
 
 ClapTrap::~ClapTrap() {
@@ -54,4 +65,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	} else {
 		std::cout << "ClapTrap " << _name << " cannot be repaired due to lack of hit points or energy points!" << std::endl;
 	}
+}
+
+void ClapTrap::info() {
+	std::cout << _name << " has " << _hitPoints << " hit points left and " <<  _energyPoints << " energy points left." << std::endl;
 }

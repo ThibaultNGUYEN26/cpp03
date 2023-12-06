@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:18:36 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/06 13:34:26 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:09:16 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,34 @@
 #include "../includes/ScavTrap.hpp"
 
 int main() {
-	ClapTrap claptrap("CLAP");
-	ScavTrap scavtrap("SCAV");
-
+	ClapTrap claptrap;
+	claptrap.info();
 	claptrap.attack("Enemy");
-	scavtrap.attack("Enemy");
 	claptrap.takeDamage(5);
 	claptrap.beRepaired(3);
+	claptrap.info();
+
+	std::cout << std::endl;
+	
+	ScavTrap scavtrap("SCAV");
+	scavtrap.info();
+	scavtrap.attack("Enemy");
 	scavtrap.takeDamage(5);
 	scavtrap.beRepaired(3);
-
-	ClapTrap new_claptrap = claptrap;
-	ScavTrap new_scavtrap = scavtrap;
-
-	new_claptrap.attack("New Enemy");
-	new_scavtrap.attack("New Enemy");
-
+	scavtrap.info();
 	scavtrap.guardGate();
+
+	std::cout << std::endl;
+
+	ScavTrap scavtrap2 = scavtrap;
+	scavtrap2.info();
+	scavtrap2.attack("New Enemy");
+	scavtrap2.takeDamage(5);
+	scavtrap2.beRepaired(3);
+	scavtrap2.info();
+	scavtrap2.guardGate();
+
+	std::cout << std::endl;
 
 	return 0;
 }

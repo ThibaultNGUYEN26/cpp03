@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:13:50 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/06 13:34:39 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:35:31 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
 	std::cout << "ScavTrap named " << other._name << " copied!" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        _name = other._name + "_assigned";
+        _hitPoints = other._hitPoints;
+        _energyPoints = other._energyPoints;
+        _attackDamage = other._attackDamage;
+    }
+    std::cout << "ScavTrap named " << _name << " has been assigned!" << std::endl;
+    return *this;
 }
 
 ScavTrap::~ScavTrap() {
