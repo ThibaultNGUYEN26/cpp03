@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:00:19 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/06 16:00:36 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:11:35 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	ClapTrap claptrap;
+	ClapTrap claptrap("BOT");
 	claptrap.info();
 	claptrap.attack("Enemy");
 	claptrap.takeDamage(5);
@@ -23,7 +23,7 @@ int main()
 
 	std::cout << std::endl;
 
-	ClapTrap clap("BOT2");
+	ClapTrap clap(claptrap);
 	clap.info();
 	clap.attack("Enemy");
 	clap.takeDamage(5);
@@ -32,7 +32,8 @@ int main()
 
 	std::cout << std::endl;
 
-	ClapTrap clap2 = clap;
+	ClapTrap clap2;
+	clap2 = claptrap;
 	clap2.info();
 	clap2.attack("Enemy");
 	clap2.takeDamage(5);

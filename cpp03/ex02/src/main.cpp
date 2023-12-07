@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:26:30 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/07 14:36:33 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:15:46 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ int main() {
 	fragtrap2.beRepaired(3);
 	fragtrap2.info();
 	fragtrap2.highFivesGuys();
+
+	std::cout << std::endl;
+
+	FragTrap fragtrap3;
+	fragtrap3  = fragtrap;
+	fragtrap3.info();
+	fragtrap3.attack("New Enemy");
+	fragtrap3.takeDamage(5);
+	fragtrap3.beRepaired(3);
+	fragtrap3.info();
+	fragtrap3.highFivesGuys();
 
 	std::cout << std::endl;
 
