@@ -6,11 +6,10 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:18:36 by thibault          #+#    #+#             */
-/*   Updated: 2023/12/06 16:09:16 by thibault         ###   ########.fr       */
+/*   Updated: 2023/12/07 14:36:12 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
 #include "../includes/ScavTrap.hpp"
 
 int main() {
